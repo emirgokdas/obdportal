@@ -1,0 +1,18 @@
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.combo-box {
+    -fx-padding: 5px;
+}

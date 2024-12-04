@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      stylesheets="../asset/style.css"  spacing="15" style="-fx-padding: 20;" fx:controller="org.demoapplication.demo3.HomeController">
+
+    <Label text="Customer Form" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Selectbox -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Select Customer:" />
+        <ComboBox  fx:id="customerSelectBox" style="margin-left:15px;" prefWidth="200" />
+    </HBox>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Submit" onAction="#handleSubmit" />
+        <Button text="Cancel" onAction="#handleCancel" />
+    </HBox>
+</VBox>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            fx:controller="org.demoapplication.demo3.MainController"
+            fx:id="rootLayout">
+    <!-- Top (Header) -->
+    <top>
+        <HBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 10;">
+            <Label text="Responsive Layout" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Home" />
+            <Button text="About" onAction="#loadAboutPage" /> <!-- Burada çağırılıyor -->
+            <Button text="Contact" />
+        </HBox>
+    </top>
+
+    <!-- Left (Sidebar) -->
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #343a40; -fx-padding: 15;" prefWidth="200">
+            <Label text="Menu" style="-fx-text-fill: white; -fx-font-size: 16px;" />
+            <Button text="Dashboard" style="-fx-background-color: #495057; -fx-text-fill: white;" />
+            <Button text="Profile" style="-fx-background-color: #495057; -fx-text-fill: white;" />
+            <Button text="Settings" style="-fx-background-color: #495057; -fx-text-fill: white;" />
+            <Button text="Logout" style="-fx-background-color: #495057; -fx-text-fill: white;" />
+        </VBox>
+    </left>
+
+    <!-- Center (Content) -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Welcome to the Responsive Layout" style="-fx-font-size: 24px;" />
+            <HBox spacing="10">
+                <VBox spacing="5" style="-fx-background-color: #e9ecef; -fx-padding: 10;" prefWidth="200">
+                    <Label text="Column 1" style="-fx-font-weight: bold;" />
+                    <Label text="Lorem ipsum dolor sit amet." />
+                </VBox>
+                <VBox spacing="5" style="-fx-background-color: #e9ecef; -fx-padding: 10;" prefWidth="200">
+                    <Label text="Column 2" style="-fx-font-weight: bold;" />
+                    <Label text="Vestibulum vitae nisi varius." />
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

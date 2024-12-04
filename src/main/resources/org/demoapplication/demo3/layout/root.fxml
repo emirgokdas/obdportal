@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ListView?>
+<BorderPane prefHeight="917.0" prefWidth="1791.0" stylesheets="../asset/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.demoapplication.demo3.RootController">
+    <!-- Top (Header) -->
+    <top>
+        <HBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 10;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="OBD Portal Desktop" />
+            <Pane styleClass="content-background" stylesheets="@../asset/style.css" HBox.hgrow="ALWAYS" />
+            <Button onAction="#loadHome" stylesheets="@../asset/style.css" text="Home" />
+            <Button onAction="#loadAbout" stylesheets="@../asset/style.css" text="About" />
+            <Button onAction="#loadSettings" stylesheets="@../asset/style.css" text="Settings" />
+        </HBox>
+    </top>
+
+    <!-- Left (Sidebar) -->
+    <left>
+        <VBox prefWidth="200" spacing="10" style="-fx-background-color: #343a40; -fx-padding: 15;">
+            <Label style="-fx-text-fill: white; -fx-font-size: 16px;" text="Menu" />
+            <Button onAction="#loadHome" style="-fx-background-color: #495057; -fx-text-fill: white;" text="Dashboard" />
+            <Button onAction="#loadAbout" style="-fx-background-color: #495057; -fx-text-fill: white;" text="Profile" />
+            <Button onAction="#loadSettings" style="-fx-background-color: #495057; -fx-text-fill: white;" text="Logout" />
+        </VBox>
+    </left>
+
+    <!-- Center (Dynamic Content Area) -->
+    <center>
+        <!-- Center alanına bir VBox veya başka bir düzenleme bileşeni eklenir -->
+        <VBox id="contentArea" fx:id="contentArea" style="-fx-padding: 20;" stylesheets="@../asset/style.css">
+         <styleClass>
+            <String fx:value="contentArea" />
+            <String fx:value="content-background" />
+         </styleClass></VBox>
+    </center>
+
+    <!-- Right (New Sidebar) -->
+    <right>
+        <VBox spacing="10" style="-fx-background-color: #e9ecef; -fx-padding: 15;" prefWidth="250">
+            <!-- Connection Status -->
+            <Label text="Connection Status" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+            <!-- Log Container -->
+            <ListView fx:id="logListView" style="-fx-background-color: white; -fx-border-color: #ddd;" prefHeight="400" />
+
+            <!-- Buttons -->
+            <HBox spacing="10">
+                <Button fx:id="flashButton" text="Flash" style="-fx-background-color: #007bff; -fx-text-fill: white;" maxWidth="Infinity" />
+                <Button fx:id="clearButton" text="Clear" style="-fx-background-color: #dc3545; -fx-text-fill: white;" maxWidth="Infinity" />
+            </HBox>
+            <HBox spacing="10">
+                <Button fx:id="startListeningButton" text="Start Listening" style="-fx-background-color: #28a745; -fx-text-fill: white;" maxWidth="Infinity" />
+                <Button fx:id="stopListeningButton" text="Stop Listening" style="-fx-background-color: #ffc107; -fx-text-fill: black;" maxWidth="Infinity" />
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>
