@@ -1,4 +1,4 @@
-package org.demoapplication.demo3;
+package org.demoapplication.demo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -20,7 +20,7 @@ public class HomeController {
     }
 
     private void loadCustomersFromDatabase() {
-        String url = "jdbc:mysql://localhost:3306/obdportal";
+        String url = "jdbc:mysql://localhost:3306/obd";
         String user = "root"; // MySQL kullanıcı adı
         String password = ""; // Şifre
 

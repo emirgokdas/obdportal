@@ -1,4 +1,4 @@
-package org.demoapplication.demo3;
+package org.demoapplication.demo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

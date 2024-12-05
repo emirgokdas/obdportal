@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      stylesheets="../asset/style.css"  spacing="15" style="-fx-padding: 20;" fx:controller="org.demoapplication.demo3.HomeController">
+      stylesheets="../asset/style.css"  spacing="15" style="-fx-padding: 20;" fx:controller="org.demoapplication.demo.HomeController">
 
     <Label text="Customer Form" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
 

@@ -1,8 +1,9 @@
-package org.demoapplication.demo3;
+package org.demoapplication.demo;
 
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.scene.control.ListView;
+
 
 public class SerialPortListener {
 
@@ -22,11 +23,11 @@ public class SerialPortListener {
         serialPort.setNumStopBits(SerialPort.ONE_STOP_BIT);
 
         if (serialPort.openPort()) {
-            System.out.println("Port açıldı: " + portName);
-            logToUI("Port açıldı: " + portName);
+            System.out.println("Connected: " + portName);
+            logToUI("Connected: " + portName);
         } else {
-            System.out.println("Port açılamadı: " + portName);
-            logToUI("Port açılamadı: " + portName);
+            System.out.println("Connection Failed: " + portName);
+            logToUI("Connection Failed: " + portName);
             return;
         }
 
@@ -47,8 +48,8 @@ public class SerialPortListener {
 
                 if (bytesRead > 0) {
                     String data = new String(buffer); // Gelen veriyi stringe çevir
-                    System.out.println("Gelen Veri: " + data);
-                    logToUI("Gelen Veri: " + data);
+                    System.out.println("Gelen Veri: " + buffer);
+                    logToUI("Gelen Veri: " + buffer);
                 }
             }
         });
@@ -57,7 +58,7 @@ public class SerialPortListener {
     public void stopListening() {
         if (serialPort != null && serialPort.isOpen()) {
             serialPort.closePort();
-            logToUI("Port kapatıldı.");
+            logToUI("Connection Closed.");
         }
     }
 
