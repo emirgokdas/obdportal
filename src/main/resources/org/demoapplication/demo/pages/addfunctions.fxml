@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="491.0" prefWidth="678.0" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.demoapplication.demo.AddFunctionController">
+    <GridPane hgap="10" vgap="10">
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+   <TextField fx:id="functionNameField" text="Function Name" />
+   <TextArea fx:id="hexTextArea" prefHeight="200.0" prefWidth="200.0" text="Enter HEX Values" />
+     <Button text="Sync and Save Can Data" />
+   <TableView fx:id="functionsTable" prefHeight="200.0" prefWidth="200.0">
+     <columns>
+       <TableColumn fx:id="functionNameColumn" prefWidth="329.0" text="Function Name" />
+       <TableColumn fx:id="operationColumn" minWidth="0.0" prefWidth="306.0" text="Operation" />
+     </columns>
+   </TableView>
+</VBox>

@@ -36,6 +36,9 @@ public class RootController {
     private Button clearListeningButton;
 
     @FXML
+    private Button addFunction;
+
+    @FXML
     private Button startListeningButton;
 
     @FXML
@@ -45,46 +48,35 @@ public class RootController {
 
     @FXML
     private void initialize() {
-        serialPortListener = new SerialPortListener(logListView);
-        loadCustomersFromDatabase();
 
-        logListView.getItems().addAll(
-                "Log 1: Application started",
-                "Log 2: User logged in",
-                "Log 3: Data loaded"
-        );
 
-        // Flash butonuna tıklama olayı ekleme
-        flashButton.setOnAction(event -> {
-            logListView.getItems().add("Log: Flash button clicked");
-        });
-        clearListeningButton.setOnAction(event -> {
-            logListView.getItems().clear();
-        });
-        // Start Listening butonu
-        startListeningButton.setOnAction(event -> serialPortListener.startListening("COM8"));
+        loadView("pages/home.fxml");
 
-        // Stop Listening butonu
-        stopListeningButton.setOnAction(event -> serialPortListener.stopListening());
-
-//
-//        loadView("pages/home.fxml");
     }
 
-//    @FXML
-//    private void loadHome() {
-//        loadView("pages/home.fxml");
-//    }
-//
-//    @FXML
-//    private void loadAbout() {
-//        loadView("pages/about.fxml");
-//    }
-//
-//    @FXML
-//    private void loadSettings() {
-//        loadView("pages/settings.fxml");
-//    }
+
+    @FXML
+    private void loadSettings() {
+        loadView("pages/settings.fxml");
+    }
+    @FXML
+    private void addFunction() {
+        loadView("pages/addfunctions.fxml");
+    }
+    @FXML
+    private void loadHome(){
+        loadView("pages/home.fxml");
+    }
+
+    private void loadView(String fxmlFile) {
+        try {
+            Node view = FXMLLoader.load(getClass().getResource(fxmlFile));
+            contentArea.getChildren().clear(); // Eski içeriği temizle
+            contentArea.getChildren().add(view); // Yeni içeriği ekle
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void loadCustomersFromDatabase() {
         String url = "jdbc:mysql://localhost:3306/obd";

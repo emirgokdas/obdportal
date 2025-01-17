@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      stylesheets="../asset/style.css"  spacing="15" style="-fx-padding: 20;" fx:controller="org.demoapplication.demo.HomeController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-    <Label text="Customer Form" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+<VBox prefHeight="766.0" prefWidth="918.0" spacing="15" style="-fx-padding: 20;" stylesheets="../asset/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.demoapplication.demo.HomeController">
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Device Config Form" />
 
     <!-- Selectbox -->
-    <HBox spacing="10" alignment="CENTER">
-        <Label text="Select Customer:" />
-        <ComboBox  fx:id="customerSelectBox" style="margin-left:15px;" prefWidth="200" />
+    <HBox prefHeight="57.0" prefWidth="878.0" spacing="10">
+        <Label nodeOrientation="LEFT_TO_RIGHT" text="Select Customer:" />
+        <ComboBox fx:id="customerSelectBox" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200" style="margin-left:15px;" />
     </HBox>
+   <HBox prefHeight="33.0" prefWidth="878.0">
+      <children>
+         <Label prefHeight="17.0" prefWidth="99.0" text="Select Function: " />
+         <ComboBox prefHeight="25.0" prefWidth="202.0" />
+      </children>
+   </HBox>
 
     <!-- Buttons -->
-    <HBox spacing="10" alignment="CENTER">
-        <Button text="Submit" onAction="#handleSubmit" />
-        <Button text="Cancel" onAction="#handleCancel" />
+    <HBox prefHeight="25.0" prefWidth="657.0" spacing="10">
+        <Button onAction="#handleSubmit" text="Select" />
+        <Button onAction="#handleCancel" text="Clear" />
     </HBox>
+
+    <!-- Sağ Taraf -->
+    <VBox spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+
+
+        <!-- Ek Bilgilendirme -->
+        <Label text="VIN Number:" />
+        <TextField fx:id="deviceNameField" disable="true" promptText="IO923UE8238U9823U8" />
+
+        <Label text="Firmware CPU Serial Number" />
+        <TextField fx:id="ipAddressField" disable="true" promptText="S23ET4X8U3948RU9" />
+
+        <Label text="Port:" />
+        <TextField fx:id="portField" promptText="Enter port" />
+
+
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Terminal" />
+        <Label text="Connection Status:" />
+        <ListView fx:id="logListView" prefHeight="200" />
+
+        <!-- Alt Butonlar -->
+        <HBox alignment="BASELINE_LEFT" spacing="10">
+            <Button fx:id="startListeningButton" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Start Listening" />
+            <Button fx:id="flashButton" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Flash" />
+            <Button fx:id="clearListeningButton" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Clear" />
+            <Button fx:id="stopListeningButton" style="-fx-background-color: #ffc107; -fx-text-fill: black;" text="Stop" />
+        </HBox>
+
+    </VBox>
+
 </VBox>
